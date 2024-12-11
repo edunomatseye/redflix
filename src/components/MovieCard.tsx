@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Star } from 'lucide-react';
-import { getImageUrl } from '../config/api';
-import type { Movie } from '../types/movie';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Star } from "lucide-react";
+import { getImageUrl } from "../config/api";
+import type { Movie } from "../types/movie";
 
 interface MovieCardProps {
   movie: Movie;

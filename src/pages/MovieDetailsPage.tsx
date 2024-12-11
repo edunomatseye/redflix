@@ -1,10 +1,10 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Star, Calendar } from 'lucide-react';
-import { useMovie } from '../hooks/useMovie';
-import { useFavorites } from '../hooks/useFavorites';
-import { FavoriteButton } from '../components/FavoriteButton';
-import { getImageUrl } from '../config/api';
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft, Star, Calendar } from "lucide-react";
+import { useMovie } from "../hooks/useMovie";
+import { useFavorites } from "../hooks/useFavorites";
+import { FavoriteButton } from "../components/FavoriteButton";
+import { getImageUrl } from "../config/api";
 
 export const MovieDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -51,8 +51,8 @@ export const MovieDetailsPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-4xl px-4 py-8">
-        <div className="-mt-32 rounded-lg bg-gray-800 p-6 shadow-xl">
+      <div className="relative -mt-32 mx-auto max-w-4xl px-4 py-8">
+        <div className="rounded-lg bg-gray-800 p-6 shadow-xl">
           <h1 className="text-3xl font-bold text-white">{movie.title}</h1>
           {movie.original_title !== movie.title && (
             <p className="mt-1 text-gray-400">({movie.original_title})</p>
