@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-import type { Movie } from '../types/movie';
+import { useState, useEffect } from "react";
 
-const FAVORITES_KEY = 'redflix_favorites';
+const FAVORITES_KEY = "redflix_favorites";
 
 export function useFavorites() {
   const [favorites, setFavorites] = useState<number[]>(() => {
