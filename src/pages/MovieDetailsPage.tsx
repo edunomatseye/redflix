@@ -23,7 +23,7 @@ export const MovieDetailsPage: React.FC = () => {
   if (error || !movie) {
     return (
       <div className="flex h-screen items-center justify-center bg-gray-900">
-        <p className="text-white">Movie not found</p>
+        <p className="text-white">Movie not found!</p>
       </div>
     );
   }
