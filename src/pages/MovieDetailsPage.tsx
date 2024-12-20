@@ -24,6 +24,7 @@ export const MovieDetailsPage: React.FC = () => {
     return (
       <div className="flex h-screen items-center justify-center bg-gray-900">
         <p className="text-white">Movie not found!</p>
+        <h2>You have to be mobile bro!!!</h2>
       </div>
     );
   }
