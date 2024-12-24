@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect } from "react";
-import { useStore } from "@xstate/react";
+import { useMachine } from "@xstate/react";
 import themeMachine from "../machines/themeMachine";
 
 type ThemeContextType = {
@@ -12,12 +12,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const state = useStore(themeMachine);
+  const state = useMachine(themeMachine);
 
   useEffect(() => {
     // Apply theme class to document body
-    document.body.className = state.value;
-  }, [state.value]);
+    document.body.className = state.values;
+  }, [state]);
 
   const toggleTheme = () => {
     themeMachine.send("TOGGLE");

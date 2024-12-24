@@ -4,7 +4,7 @@ type ThemeState = {
   value: "light" | "dark";
 };
 
-const themeMachine = createStore<ThemeState>({
+const themeMachine = createStore<ThemeState, { type: "TOGGLE" }>({
   initial: "light",
   states: {
     light: {

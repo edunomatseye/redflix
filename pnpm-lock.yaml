@@ -14,6 +14,12 @@ importers:
       '@tanstack/react-query-devtools':
         specifier: ^5.24.1
         version: 5.62.7(@tanstack/react-query@5.62.7(react@18.3.1))(react@18.3.1)
+      '@xstate/react':
+        specifier: ^5.0.0
+        version: 5.0.0(@types/react@18.3.15)(react@18.3.1)
+      '@xstate/store':
+        specifier: ^2.6.2
+        version: 2.6.2(react@18.3.1)
       axios:
         specifier: ^1.6.7
         version: 1.7.9
@@ -729,6 +735,26 @@ packages:
 
   '@vitest/utils@1.6.0':
     resolution: {integrity: sha512-21cPiuGMoMZwiOHa2i4LXkMkMkCGzA+MVFV70jRwHo95dL4x/ts5GZhML1QWuy7yfp3WzK3lRvZi3JnXTYqrBw==}
+
+  '@xstate/react@5.0.0':
+    resolution: {integrity: sha512-MkYMpmqqCdK43wSl/V/jSpsvumzV4RSG2ZOUEAIrg/w36BJpyufMrsR0rz7POX5ICF5s3xzP9q7Hd5TyM5SSyQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-0
+      xstate: ^5.19.0
+    peerDependenciesMeta:
+      xstate:
+        optional: true
+
+  '@xstate/store@2.6.2':
+    resolution: {integrity: sha512-zznGTWU+tmhbD0UUxPLy5FmxvceBNyMsN1Tuy7UMJAH9NuaQWj4/B2L+EcO6FxI2b2CNyzk1PL5mZ8cDpBFpMw==}
+    peerDependencies:
+      react: ^18.2.0 || ^19.0.0-0
+      solid-js: ^1.7.6
+    peerDependenciesMeta:
+      react:
+        optional: true
+      solid-js:
+        optional: true
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2027,6 +2053,20 @@ packages:
   url-parse@1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
 
+  use-isomorphic-layout-effect@1.2.0:
+    resolution: {integrity: sha512-q6ayo8DWoPZT0VdG4u3D3uxcgONP3Mevx2i2b0434cwWBoL+aelL1DzkXI6w3PhTZzUeR2kaVlZn70iCiseP6w==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  use-sync-external-store@1.4.0:
+    resolution: {integrity: sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -2820,6 +2860,18 @@ snapshots:
       estree-walker: 3.0.3
       loupe: 2.3.7
       pretty-format: 29.7.0
+
+  '@xstate/react@5.0.0(@types/react@18.3.15)(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      use-isomorphic-layout-effect: 1.2.0(@types/react@18.3.15)(react@18.3.1)
+      use-sync-external-store: 1.4.0(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@xstate/store@2.6.2(react@18.3.1)':
+    optionalDependencies:
+      react: 18.3.1
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
@@ -4154,6 +4206,16 @@ snapshots:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+
+  use-isomorphic-layout-effect@1.2.0(@types/react@18.3.15)(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 18.3.15
+
+  use-sync-external-store@1.4.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   util-deprecate@1.0.2: {}
 

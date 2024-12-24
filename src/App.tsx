@@ -1,17 +1,27 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { queryClient } from "./lib/queryClient";
+import { HomePage } from "./pages/HomePage";
+import { MovieDetailsPage } from "./pages/MovieDetailsPage";
 import { ThemeProvider } from "./components/ThemeProvider";
-import ThemeToggle from "./components/ThemeToggle";
+
 import "./styles/theme.css";
 
-const App: React.FC = () => {
+function App() {
   return (
-    <ThemeProvider>
-      <div className="app">
-        <ThemeToggle />
-        {/* Your other components */}
-      </div>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/movie/:id" element={<MovieDetailsPage />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
-};
+}
 
 export default App;
